@@ -20,24 +20,24 @@ fun App(
 ) {
     ContactsTheme(
         darkTheme = darkTheme,
-        dynamicColor = dynamicColor
+        dynamicColor = dynamicColor,
     ) {
         val viewModel = getViewModel(
             key = "contact-list-screen",
             factory = viewModelFactory {
                 ContactListViewModel()
-            }
+            },
         )
         val state by viewModel.state.collectAsState()
 
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background
+            color = MaterialTheme.colorScheme.background,
         ) {
             ContactListScreen(
                 state = state,
                 newContact = viewModel.newContact,
-                onEvent = viewModel::onEvent
+                onEvent = viewModel::onEvent,
             )
         }
     }

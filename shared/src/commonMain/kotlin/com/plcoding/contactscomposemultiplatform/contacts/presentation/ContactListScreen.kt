@@ -28,19 +28,19 @@ fun ContactListScreen(
                 onClick = {
                     onEvent(ContactListEvent.OnAddNewContactClick)
                 },
-                shape = RoundedCornerShape(20.dp)
+                shape = RoundedCornerShape(20.dp),
             ) {
                 Icon(
                     imageVector = Icons.Rounded.PersonAdd,
                     contentDescription = "Add contact",
                 )
             }
-        }
+        },
     ) {
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             contentPadding = PaddingValues(vertical = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             item {
                 Text(
@@ -48,7 +48,7 @@ fun ContactListScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 16.dp),
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
                 )
             }
 
@@ -60,7 +60,7 @@ fun ContactListScreen(
                         .clickable {
                             onEvent(ContactListEvent.SelectContact(contact))
                         }
-                        .padding(horizontal = 16.dp)
+                        .padding(horizontal = 16.dp),
                 )
             }
         }

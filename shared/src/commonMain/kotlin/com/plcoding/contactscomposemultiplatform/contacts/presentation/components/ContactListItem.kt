@@ -18,11 +18,11 @@ fun ContactListItem(
 ) {
     Row(
         modifier = modifier,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         ContactPhoto(
             contact = contact,
-            modifier = Modifier.size(50.dp)
+            modifier = Modifier.size(50.dp),
         )
 
         Spacer(Modifier.width(16.dp))
