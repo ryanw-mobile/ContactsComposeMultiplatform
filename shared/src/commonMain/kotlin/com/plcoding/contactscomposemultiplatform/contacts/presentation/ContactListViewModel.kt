@@ -12,8 +12,8 @@ class ContactListViewModel : ViewModel() {
 
     private val _state = MutableStateFlow(
         ContactListState(
-            contacts = contacts
-        )
+            contacts = contacts,
+        ),
     )
     val state = _state.asStateFlow()
 
@@ -29,9 +29,9 @@ private val contacts = (1..50).map {
     Contact(
         id = it.toLong(),
         firstName = "First$it",
-        lastName = "Lst$it",
+        lastName = "Last$it",
         email = "test@test$it.com",
         phoneNumber = "123456789",
-        photoBytes = null
+        photoBytes = null,
     )
 }
