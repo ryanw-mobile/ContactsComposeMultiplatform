@@ -19,11 +19,11 @@ kotlin {
             export("dev.icerock.moko:mvvm-core:0.16.1")
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
-        iosSimulatorArm64()
+        iosSimulatorArm64(),
     ).forEach {
         it.binaries.framework {
             baseName = "shared"
@@ -96,6 +96,13 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+sqldelight {
+    database("ContactDatabase") {
+        packageName = "com.plcoding.contactscomposemultiplatform.database"
+        sourceFolders = listOf("sqldelight")
     }
 }
 
