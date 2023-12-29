@@ -12,6 +12,7 @@ import platform.UIKit.UIViewController
 import platform.darwin.NSObject
 import platform.posix.memcpy
 
+@OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
 actual class ImagePicker(
     private val rootController: UIViewController,
 ) {
@@ -21,7 +22,6 @@ actual class ImagePicker(
 
     private var onImagePicked: (ByteArray) -> Unit = {}
 
-    @OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
     private val delegate = object : NSObject(), UIImagePickerControllerDelegateProtocol, UINavigationControllerDelegateProtocol {
         override fun imagePickerController(
             picker: UIImagePickerController,

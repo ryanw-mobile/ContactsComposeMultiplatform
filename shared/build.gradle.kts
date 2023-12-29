@@ -5,6 +5,8 @@ plugins {
     id("app.cash.sqldelight")
 }
 
+val sqlDelightVersion = "2.0.1"
+
 kotlin {
     android {
         compilations.all {
@@ -41,8 +43,8 @@ kotlin {
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
 
-                implementation("app.cash.sqldelight:runtime:2.0.0")
-                implementation("app.cash.sqldelight:coroutines-extensions:2.0.0")
+                implementation("app.cash.sqldelight:runtime:$sqlDelightVersion")
+                implementation("app.cash.sqldelight:coroutines-extensions:$sqlDelightVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
                 implementation("dev.icerock.moko:mvvm-core:0.16.1")
                 implementation("dev.icerock.moko:mvvm-compose:0.16.1")
@@ -57,9 +59,9 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("app.cash.sqldelight:android-driver:2.0.0")
+                implementation("app.cash.sqldelight:android-driver:$sqlDelightVersion")
                 implementation("androidx.appcompat:appcompat:1.6.1")
-                implementation("androidx.activity:activity-compose:1.7.2")
+                implementation("androidx.activity:activity-compose:1.8.2")
             }
         }
         val androidUnitTest by getting
@@ -68,7 +70,7 @@ kotlin {
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
             dependencies {
-                implementation("app.cash.sqldelight:native-driver:2.0.0")
+                implementation("app.cash.sqldelight:native-driver:$sqlDelightVersion")
             }
             dependsOn(commonMain)
             iosX64Main.dependsOn(this)
@@ -109,10 +111,10 @@ sqldelight {
 }
 
 dependencies {
-    implementation("androidx.core:core:1.10.1")
+    implementation("androidx.core:core:1.12.0")
     commonMainApi("dev.icerock.moko:mvvm-core:0.16.1")
     commonMainApi("dev.icerock.moko:mvvm-compose:0.16.1")
     commonMainApi("dev.icerock.moko:mvvm-flow:0.16.1")
     commonMainApi("dev.icerock.moko:mvvm-flow-compose:0.16.1")
-    implementation("app.cash.sqldelight:android-driver:2.0.0")
+    implementation("app.cash.sqldelight:android-driver:$sqlDelightVersion")
 }
