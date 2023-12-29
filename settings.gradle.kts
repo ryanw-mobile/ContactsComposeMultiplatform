@@ -1,8 +1,13 @@
+rootProject.name = "ContactsComposeMultiplatform"
+
+include(":androidContactsMP")
+include(":shared")
+
 pluginManagement {
     repositories {
-        google()
         gradlePluginPortal()
         mavenCentral()
+        google()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 
@@ -19,17 +24,18 @@ pluginManagement {
         id("com.android.library").version(agpVersion)
 
         id("org.jetbrains.compose").version(composeVersion)
+        id("app.cash.sqldelight") version "2.0.0"
     }
+}
+
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version("0.4.0")
 }
 
 dependencyResolutionManagement {
     repositories {
-        google()
         mavenCentral()
+        google()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
-
-rootProject.name = "ContactsComposeMultiplatform"
-include(":androidContactsMP")
-include(":shared")
