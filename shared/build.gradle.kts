@@ -40,10 +40,10 @@ kotlin {
                 api("app.cash.sqldelight:runtime:$sqlDelightVersion")
                 api("app.cash.sqldelight:coroutines-extensions:$sqlDelightVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
-                implementation("dev.icerock.moko:mvvm-core:0.16.1")
-                implementation("dev.icerock.moko:mvvm-compose:0.16.1")
-                implementation("dev.icerock.moko:mvvm-flow:0.16.1")
-                implementation("dev.icerock.moko:mvvm-flow-compose:0.16.1")
+                api("dev.icerock.moko:mvvm-core:0.16.1")
+                api("dev.icerock.moko:mvvm-compose:0.16.1")
+                api("dev.icerock.moko:mvvm-flow:0.16.1")
+                api("dev.icerock.moko:mvvm-flow-compose:0.16.1")
             }
         }
         val androidMain by getting {
